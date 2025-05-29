@@ -19,7 +19,8 @@ export class ArbolNArio {
             return nodoInicial;
         }
         
-        // Búsqueda en profundidad
+        
+
         for (let hijo of nodoInicial.hijos) {
             const resultado = this.buscarNodo(valor, hijo);
             if (resultado) return resultado;
@@ -27,7 +28,7 @@ export class ArbolNArio {
         
         return null;
     }
-      // Método para agregar un hijo a un nodo existente
+      
     agregarHijo(valorPadre, nuevoValor) {
         console.log('Agregando hijo:', valorPadre, nuevoValor);
         
@@ -44,7 +45,6 @@ export class ArbolNArio {
             return null;
         }
     }
-      // Método para editar el nombre de una zona verde
     editarNodo(valorAntiguo, nuevoNombre) {
         console.log('Editando nodo:', valorAntiguo, 'Nuevo nombre:', nuevoNombre);
         
@@ -59,7 +59,7 @@ export class ArbolNArio {
         }
     }
     
-    // Calcular la altura del árbol (profundidad máxima)
+
     calcularAltura(nodo = this.raiz) {
         if (!nodo) return 0;
         
@@ -77,11 +77,11 @@ export class ArbolNArio {
         
         return alturaMaxima + 1;
     }
-      // Calcular el total de nodos en el árbol
+    
     contarNodos(nodo = this.raiz) {
         if (!nodo) return 0;
         
-        let contador = 1; // Contamos el nodo actual
+        let contador = 1;
         
         for (let hijo of nodo.hijos) {
             contador += this.contarNodos(hijo);
@@ -91,7 +91,7 @@ export class ArbolNArio {
         return contador;
     }
 
-    // DFS (Depth-First Search) - Recorrido en profundidad
+    
     dfs(nodo = this.raiz) {
         if (!nodo) return [];
         
@@ -104,7 +104,7 @@ export class ArbolNArio {
         return resultado;
     }
 
-    // BFS (Breadth-First Search) - Recorrido en anchura
+    
     bfs() {
         if (!this.raiz) return [];
         
@@ -121,7 +121,7 @@ export class ArbolNArio {
         }
         
         return resultado;
-    }    // Convertir el árbol a un formato compatible con d3.js para visualización
+    }    
     obtenerDatosD3(nodo = this.raiz) {
         if (!nodo) return null;
         

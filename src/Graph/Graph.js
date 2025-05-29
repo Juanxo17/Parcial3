@@ -30,10 +30,10 @@ class Graph {
     if (index > -1) {
       this.nodes.splice(index, 1);
       
-      // Remove all edges connected to this node
+     
       delete this.adjList[node];
       
-      // Remove all references to this node in other nodes' adjacency lists
+ 
       for (const n in this.adjList) {
         const edgeIndex = this.adjList[n].indexOf(node);
         if (edgeIndex > -1) {
@@ -54,7 +54,7 @@ class Graph {
     const edges = [];
     for (const node in this.adjList) {
       this.adjList[node].forEach(neighbor => {
-        // To avoid duplicates (since the graph is undirected), we only add edges where source < target
+        
         if (node < neighbor) {
           edges.push({ source: node, target: neighbor });
         }
