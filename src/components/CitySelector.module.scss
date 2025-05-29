@@ -1,0 +1,47 @@
+@import '../styles/variables.scss';
+
+.citySelector {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+
+  h3 {
+    margin-top: 0;
+    color: $primary-color;
+    margin-bottom: 15px;
+  }
+}
+
+.cityList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cityButton {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  
+  &:hover {
+    background-color: $secondary-color;
+    color: white;
+  }
+  
+  &.selected {
+    background-color: $primary-color;
+    color: white;
+  }
+}
+
+.noCities {
+  color: $text-color;
+  font-style: italic;
+  margin: 0;
+}
